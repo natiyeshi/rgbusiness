@@ -40,10 +40,10 @@ const Services = ({ initialServices }: Props) => {
   return (
     <div>
       <div className="flex justify-between my-2">
-        <div className="text-2xl font-black">Services</div>
+        <div className="text-2xl font-black">Products</div>
         <AddService setServices={setServices} />
       </div>
-      <div className=" text-adminText capitalize">Available testimonies</div>
+      <div className=" text-adminText capitalize">Available Products</div>
       <div className="grid grid-cols-3 mt-8 gap-5 ">
         {services.map((service) => (
           <Service

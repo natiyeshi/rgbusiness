@@ -17,11 +17,11 @@ const Message = ({
           message.createdAt ? new Date(message.createdAt) : new Date(Date.now())
         )}
       </div>
-      <div className="break-all">{getMaxString(message.message)}</div>
-      <div className="font-semibold text-black text-sm place-self-end break-all">
+      <div className="font-semibold  text-black text-sm  break-all">
         {message.email}
       </div>
-      <div className="flex justify-between">
+      <div className="break-all">{getMaxString(message.message)}</div>
+      <div className="flex justify-between mt-auto">
         <ReadMessage data={message} />
         <AreYouSureDelete onDelete={onDelete} />
       </div>

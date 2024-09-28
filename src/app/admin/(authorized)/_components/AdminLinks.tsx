@@ -6,6 +6,7 @@ import { MdHomeRepairService } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { LuBuilding2 } from "react-icons/lu";
 import { AiFillProduct } from "react-icons/ai";
+import { MdWork } from "react-icons/md";
 import { usePathname } from "next/navigation";
 export interface Props {
   name: string;
@@ -20,9 +21,14 @@ const links: Props[] = [
     Icon: BiHome,
   },
   {
-    name: "Service",
-    link: "/admin/service",
+    name: "Products",
+    link: "/admin/products",
     Icon: MdHomeRepairService,
+  },
+  {
+    name: "Career",
+    link: "/admin/career",
+    Icon: MdWork,
   },
   {
     name: "Messages",
@@ -38,7 +44,7 @@ const links: Props[] = [
     name: "Testimonials",
     link: "/admin/testimonials",
     Icon: LuBuilding2,
-  }
+  },
 ];
 
 export default function AdminLinks() {
@@ -50,7 +56,8 @@ export default function AdminLinks() {
           key={name}
           href={link}
           className={`${
-            pathname == link && "bg-adminPrimary/50  border-l-4 border-adminPrimary font-semibold text-black"
+            pathname == link &&
+            "bg-adminPrimary/50  border-l-4 border-adminPrimary font-semibold text-black"
           } ps-5 py-2 hover:text-black text-gray-600 flex place-items-center gap-2 hover:bg-adminPrimary/50  duration-200`}
         >
           <Icon className="text-xl" />

@@ -25,7 +25,7 @@ import { uploadImage } from "@/utils/helper";
 import { useToast } from "@/hooks/use-toast";
 import { serviceValidation } from "@/validation/service.validation";
 import { IService } from "@/interfaces/service.interface";
-
+import { allIconsArray } from "@/utils/helper";
 // Validation Schema
 
 const AddService = ({ setServices }: { setServices: Function }) => {
@@ -109,13 +109,13 @@ const AddService = ({ setServices }: { setServices: Function }) => {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger className="flex cursor-pointer gap-2 place-items-center font-semibold duration-200 hover:bg-gray-200 rounded-xl px-2">
         <IoMdAddCircle />
-        <div>Add Service</div>
+        <div>Add Product</div>
       </AlertDialogTrigger>
       <AlertDialogContent className="min-w-[600px] max-h-[95vh] overflow-auto">
         <form onSubmit={formik.handleSubmit}>
           <AlertDialogHeader>
             <AlertDialogTitle className="flex justify-between place-items-center border-b pb-2">
-              <div>Add Service</div>
+              <div>Add Product</div>
               <IoCloseSharp
                 className="cursor-pointer"
                 onClick={() => setIsOpen(false)}
@@ -129,12 +129,12 @@ const AddService = ({ setServices }: { setServices: Function }) => {
                     htmlFor="serviceName"
                     className="text-black font-semibold"
                   >
-                    Service Name
+                    Product Name
                   </label>
                   <Input
                     id="name"
                     name="name"
-                    placeholder="Service Name"
+                    placeholder="Product Name"
                     value={formik.values.name}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -192,7 +192,10 @@ const AddService = ({ setServices }: { setServices: Function }) => {
                   />
                 </div>
               ) : (
-                <div onClick={handleButtonClick} className="flex cursor-pointer w-full">
+                <div
+                  onClick={handleButtonClick}
+                  className="flex cursor-pointer w-full"
+                >
                   <div className="w-full flex mx-2 my-2 border border-dashed py-10 h-full">
                     <div className="flex flex-col m-auto">
                       <CiImageOn className="text-[70px] mx-auto" />

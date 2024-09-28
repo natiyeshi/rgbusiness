@@ -53,7 +53,7 @@ const ReadService = ({ data }: { data: IService }) => {
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <div>Service</div>
+                <div>Description</div>
                 <div className="font-semibold text-black break-all">
                   {data.desc}
                 </div>

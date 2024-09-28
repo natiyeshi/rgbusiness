@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { MdDelete } from "react-icons/md";
-
+import { signOut } from "next-auth/react";
 export interface Props {
   title: string;
   desc: string;
@@ -21,7 +21,10 @@ export interface Props {
   cancel: Function;
 }
 
-const AreYouSureLogout = ({ setIsLogout, isLogout} : any) => {
+const AreYouSureLogout = ({ setIsLogout, isLogout }: any) => {
+  const handleLogout = () => {
+    signOut({ callbackUrl: "/" }); // Redirect to homepage after logout
+  };
   return (
     <AlertDialog open={isLogout} onOpenChange={setIsLogout}>
       <AlertDialogContent>
@@ -33,7 +36,7 @@ const AreYouSureLogout = ({ setIsLogout, isLogout} : any) => {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <Button>Logout</Button>
+          <Button onClick={handleLogout}>Logout</Button>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

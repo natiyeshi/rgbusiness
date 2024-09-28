@@ -1,7 +1,15 @@
 "use server";
 import AdminLinks, { type Props } from "./_components/AdminLinks";
 
-const Layout = ({ children }: any) => {
+import { getServerSession } from "next-auth/next";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import { redirect } from "next/navigation";
+
+async function Layout({ children }: any) {
+  const session = await getServerSession(options);
+  if (!session) {
+    redirect("/api/auth/signin?callbackUrl=/admin");
+  }
   return (
     <div className="w-full shadow flex gap-5 px-4 py-4 h-[100vh] bg-adminMainBg">
       <div className="w-[450px] flex flex-col bg-gray-50 rounded-xl h-full">
@@ -18,6 +26,6 @@ const Layout = ({ children }: any) => {
       </div>
     </div>
   );
-};
+}
 
 export default Layout;

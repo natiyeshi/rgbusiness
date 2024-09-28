@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { toast } from "@/hooks/use-toast"; // Adjust this to the correct import
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,13 +13,14 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IoCloseSharp } from "react-icons/io5";
 
 const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
+  const [loading, setLoading] = useState(false);
+
   const initialValues = {
     currentPassword: "",
     newPassword: "",
@@ -38,10 +40,49 @@ const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values); // Handle form submission
-      isChangePassword(false);
-      formik.resetForm();
+    onSubmit: async (values) => {
+      setLoading(true);
+
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/users/changepassword`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              currentPassword: values.currentPassword,
+              newPassword: values.newPassword,
+            }),
+          }
+        );
+
+        const result = await response.json();
+
+        if (response.ok) {
+          toast({
+            title: "Success",
+            description: result.message || "Password changed successfully!",
+          });
+          setIsChangePassword(false);
+          formik.resetForm();
+        } else {
+          toast({
+            title: "Error",
+            description: result.message || "Failed to change password.",
+            variant: "destructive",
+          });
+        }
+      } catch (err) {
+        toast({
+          title: "Error",
+          description: "Something went wrong, please try again later.",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
     },
   });
 
@@ -51,7 +92,7 @@ const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
         <form onSubmit={formik.handleSubmit}>
           <AlertDialogHeader>
             <AlertDialogTitle className="flex justify-between place-items-center border-b pb-2">
-              <div>Add Service</div>
+              <div>Change Password</div>
               <IoCloseSharp
                 className="cursor-pointer"
                 onClick={() => setIsChangePassword(false)}
@@ -59,7 +100,6 @@ const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
             </AlertDialogTitle>
             <AlertDialogDescription className="flex gap-5 pb-14 pt-5">
               <div className="flex flex-col gap-2 w-full">
-                {/* Service Name Input */}
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="currentPassword"
@@ -109,7 +149,7 @@ const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
 
                 <div className="flex flex-col gap-2">
                   <label
-                    htmlFor="newPassword"
+                    htmlFor="confirmPassword"
                     className="text-black font-semibold"
                   >
                     Confirm Password
@@ -135,10 +175,15 @@ const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
           </AlertDialogHeader>
 
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => isChangePassword(false)}>
+            <AlertDialogCancel
+              onClick={() => setIsChangePassword(false)}
+              disabled={loading}
+            >
               Cancel
             </AlertDialogCancel>
-            <Button type="submit">Continue</Button>
+            <Button type="submit" disabled={loading}>
+              {loading ? "Changing..." : "Continue"}
+            </Button>
           </AlertDialogFooter>
         </form>
       </AlertDialogContent>
