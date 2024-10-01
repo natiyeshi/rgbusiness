@@ -10,7 +10,7 @@ export default function Contactus() {
         <div className="basis-2/5 bg-secondary rounded-xl px-6 py-4 flex flex-col gap-4 text-white">
           <div className="text-xl font-semibold">Contact Information</div>
           <div>
-            Let's connect and collaborate to make a lasting impact on the world.
+            Let&apos;s connect and collaborate to make a lasting impact on the world.
             Together, we can drive meaningful change and create a brighter, more
             sustainable future for all.
           </div>
