@@ -13,18 +13,18 @@ export async function POST(req: any) {
         { status: 400 }
       );
     }
-    // const duplicate = await User.findOne({
-    //   email: userData.email,
-    // })
-    //   .lean()
-    //   .exec();
+    const duplicate = await User.findOne({
+      email: userData.email,
+    })
+      .lean()
+      .exec();
 
-    // if (duplicate) {
-    //   return NextResponse.json(
-    //     { message: "User Already Exist!" },
-    //     { status: 409 }
-    //   );
-    // }
+    if (duplicate) {
+      return NextResponse.json(
+        { message: "User Already Exist!" },
+        { status: 409 }
+      );
+    }
     const hashPassword = await bcrypt.hash(userData.password, 10);
     userData.password = hashPassword;
     await User.create(userData);
