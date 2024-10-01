@@ -1,0 +1,24 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.format": "explicit"
+    },
+    "cssVariables.lookupFiles": [
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "node_modules/@mantine/core/styles.css"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#fa040400", // Background color of the Activity Bar
+        "activityBar.foreground": "#FFFFFF", // Color of the icons in the Activity Bar
+        "activityBar.inactiveForeground": "#F87000FF", // Color of the inactive icons
+        "activityBar.border": "#383838", // Border color of the Activity Bar
+        "activityBarBadge.background": "#2500cc", // Background color of the badges in the Activity Bar
+        "activityBarBadge.foreground": "#FFFFFF" // Foreground color of the badges in the Activity Bar
+    }
+}

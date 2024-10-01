@@ -30,7 +30,7 @@ const Service = ({
           {getMaxString(service.desc)}
         </div>
       </div>
-      <div className="flex justify-between w-full">
+      <div className="flex justify-between w-full mt-auto">
         <ReadService data={service} />
         <AreYouSureDelete onDelete={onDelete} />
       </div>

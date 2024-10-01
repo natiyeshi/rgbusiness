@@ -1,3 +1,6 @@
+import * as FaIcons from 'react-icons/fa';
+
+export const allIconsArray = Object.values(FaIcons);
 
 export function formatDate(date : Date): string {
 

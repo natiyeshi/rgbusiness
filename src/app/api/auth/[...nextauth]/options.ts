@@ -21,7 +21,6 @@ export const options: NextAuthOptions = {
                 },
             },
             async authorize(credentials) : Promise<any> {
-                console.log(credentials,"Crede--")
                 try {
                     if (!credentials) {
                         return null;
