@@ -9,16 +9,16 @@ const Aboutus = () => {
   return (
     <Section bg="">
       <div className="flex max-lg:flex-col gap-5 place-items-center min-h-[80vh]">
-        <div className="basis-1/2 flex">
+        <div className="basis-1/2 flex max-lg:mt-5">
           <Image
             src={logo}
-            className="m-auto w-1/2 object-cover"
+            className="m-auto w-[300px] max-md:w-full max-md:h-[300px]  object-cover"
             unoptimized
             alt=""
           />
         </div>
         <div className="basis-1/2 flex flex-col ">
-          <div className="text-primary font-semibold">Who we Are ?</div>
+          <div className="text-primary font-semibold max-md:mt-6">Who we Are ?</div>
           <div className="font-black custom-text mt-2">About US</div>
           <div className="text-sm mt-4">
             Established in 2018, RG Business began as a garment, textile, and

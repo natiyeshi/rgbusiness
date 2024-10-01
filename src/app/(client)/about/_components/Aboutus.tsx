@@ -18,7 +18,9 @@ const Aboutus = () => {
           />
         </div>
         <div className="basis-1/2 flex flex-col ">
-          <div className="text-primary font-semibold">Who we Are ?</div>
+          <div className="text-primary font-semibold max-md:mt-6">
+            Who we Are ?
+          </div>
           <div className="font-black custom-text mt-2">About US</div>
           <div className="text-sm mt-4">
             Established in 2018, RG Business began as a garment, textile, and

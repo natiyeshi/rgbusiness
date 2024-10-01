@@ -11,7 +11,7 @@ const Hero = () => {
         src={bgImg}
         width={100}
         height={100}
-        className="absolute object-cover z-10 w-full h-[50vh] left-0 right-0 top-0 bottom-0"
+        className="absolute object-contain z-10 w-full h-[50vh] left-0 right-0 top-0 bottom-0"
         alt="background"
         unoptimized
       />
