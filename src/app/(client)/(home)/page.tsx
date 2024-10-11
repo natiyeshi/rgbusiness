@@ -24,6 +24,7 @@ import Aboutus from "./_components/Aboutus";
 import Workwithus from "../../../components/custom/Workwithus";
 import TestimonialWraper from "@/components/custom/TestimoniesWraper";
 import HomeProductWrapper from "@/components/custom/Wrappers/HomeProductsWrapper";
+import PartnersWrapper from "@/components/custom/PartnersWrapper";
 
 export default function Page() {
   return (
@@ -33,6 +34,7 @@ export default function Page() {
       <Aboutus />
       <HomeProductWrapper />
       <Workwithus />
+      <PartnersWrapper />
       <TestimonialWraper />
     </div>
   );

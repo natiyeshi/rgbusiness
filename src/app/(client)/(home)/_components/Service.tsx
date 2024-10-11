@@ -31,31 +31,31 @@ const services = [
       "Submersible and surface water pumps installation and after-sales services for irrigation, commercial and residential water supply, and industrial process pumps.",
     icon: FaWater,
   },
-  {
-    title: "Agricultural Machinery",
-    description: "Agricultural machinery, equipment, and implements.",
-    icon: FaTractor,
-  },
-  {
-    title: "Irrigation Systems",
-    description: "Irrigation sprinklers, piping systems.",
-    icon: FaSeedling,
-  },
-  {
-    title: "Training & Consulting",
-    description: "Training and consulting services.",
-    icon: FaTools,
-  },
-  {
-    title: "Industrial Efficiency",
-    description: "Industrial processes efficiency improvements.",
-    icon: FaIndustry,
-  },
+  // {
+  //   title: "Agricultural Machinery",
+  //   description: "Agricultural machinery, equipment, and implements.",
+  //   icon: FaTractor,
+  // },
+  // {
+  //   title: "Irrigation Systems",
+  //   description: "Irrigation sprinklers, piping systems.",
+  //   icon: FaSeedling,
+  // },
+  // {
+  //   title: "Training & Consulting",
+  //   description: "Training and consulting services.",
+  //   icon: FaTools,
+  // },
+  // {
+  //   title: "Industrial Efficiency",
+  //   description: "Industrial processes efficiency improvements.",
+  //   icon: FaIndustry,
+  // },
 ];
 
 const Service = () => {
   return (
-    <Section bg={"bg-secondary"}>
+    <Section h={false} bg={"bg-secondary"}>
       <div className="flex flex-col w-full py-12 text-white">
         <div className="text-primary text-center">What we Provide for you</div>
         <div className="font-black custom-text text-center">Our Services</div>

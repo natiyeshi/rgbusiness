@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="w-full relative h-[100vh] flex flex-col  gap-10">
+    <div className="w-full relative h-[100vh] bg-slate-900 flex flex-col  gap-10">
       <Nav onHero />
       <Image
         src={bgImg}
@@ -23,9 +23,9 @@ const Hero = () => {
           Sustainable <span className="text-primary">Solutions.</span>
         </div>
         <div className="z-10">
-          Welcome to RG Business, your trusted partner in innovative solutions
-          for a sustainable future. we’ve specialized in providing top-notch
-          services in solar energy, industrial equipment, agricultural
+          Welcome to RG Business Group, your trusted partner in innovative
+          solutions for a sustainable future. we’ve specialized in providing
+          top-notch services in solar energy, industrial equipment, agricultural
           machinery, and more.
         </div>
         <div className="flex gap-5 mx-auto">

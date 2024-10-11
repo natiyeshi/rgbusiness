@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="mt-8">
-              RG Business, established in 2018 as garment and textile, and
+              RG Business Group, established in 2018 as garment and textile, and
               safety equipment trading and sourcing has expanded in to furniture
               and steel structures erection, Electromechanical works and
               industrial chemicals trading supplying to major factories and
@@ -47,6 +47,14 @@ const Footer = () => {
 
               <Link
                 href={"https://wa.me/+251911125569"}
+                target="_blank"
+                className="flex w-12 h-12 bg-primary rounded-full"
+              >
+                <FaWhatsapp className="m-auto text-2xl text-secondary" />
+              </Link>
+
+              <Link
+                href={"https://wa.me/+971529223901"}
                 target="_blank"
                 className="flex w-12 h-12 bg-primary rounded-full"
               >

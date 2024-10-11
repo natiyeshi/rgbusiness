@@ -18,15 +18,18 @@ const Aboutus = () => {
           />
         </div>
         <div className="basis-1/2 flex flex-col ">
-          <div className="text-primary font-semibold max-md:mt-6">Who we Are ?</div>
+          <div className="text-primary font-semibold max-md:mt-6">
+            Who we Are ?
+          </div>
           <div className="font-black custom-text mt-2">About US</div>
           <div className="text-sm mt-4">
-            Established in 2018, RG Business began as a garment, textile, and
-            safety equipment trading company. Since then, the business has
+            Established in 2018, RG Business Group began as a garment, textile,
+            and safety equipment trading company. Since then, the business has
             expanded into various industries, including furniture production,
             steel structure erection, electromechanical works, and industrial
-            chemical trading. RG Business serves major factories and commercial
-            businesses, offering comprehensive services in multiple sectors
+            chemical trading. RG Business Group serves major factories and
+            commercial businesses, offering comprehensive services in multiple
+            sectors
           </div>
           <Link className="w-fit mt-8" href="/about">
             <Button>Find out More</Button>
