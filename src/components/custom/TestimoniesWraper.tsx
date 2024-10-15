@@ -19,8 +19,6 @@ async function getTestimonials(): Promise<ITestimonial[]> {
       throw new Error("Failed to fetch");
     }
     const testimonials: ITestimonial[] = await res.json();
-    console.log(testimonials, "Testimonials Data");
-
     return testimonials;
   } catch (error) {
     console.log(error,"Testimonials error")
