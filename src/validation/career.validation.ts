@@ -4,7 +4,7 @@ export const careerValidation = Yup.object().shape({
   title: Yup.string()
     .required("Title is required")
     .min(3, "Title must be at least 3 characters")
-    .max(100, "Title must be less than 100 characters"),
+    .max(300, "Title must be less than 300 characters"),
   qualifications: Yup.array()
     .of(
       Yup.string()
