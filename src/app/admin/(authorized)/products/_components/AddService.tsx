@@ -57,7 +57,7 @@ const AddService = ({ setServices }: { setServices: Function }) => {
         return alert(`Image is required! `);
       }
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/service`,
+        `/api/service`,
         {
           method: "POST",
           body: JSON.stringify({ formData: { image: uri, ...values } }),
