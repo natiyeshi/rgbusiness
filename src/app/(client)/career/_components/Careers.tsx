@@ -27,7 +27,7 @@ async function Careers() {
 
 async function getCareers(): Promise<ICareer[]> {
   try {
-    const res = await fetch(`/api/career`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/career`, {
       cache: "no-store",
     });
     if (!res.ok) {

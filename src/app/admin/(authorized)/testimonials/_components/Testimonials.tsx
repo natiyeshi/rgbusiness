@@ -17,9 +17,12 @@ const Testimonials = ({ initialTestimonials }: Props) => {
   const { toast } = useToast();
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch(`/api/testimonial/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/testimonial/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         setTestimonials((test) => test.filter((data) => data._id != id));
         return true;

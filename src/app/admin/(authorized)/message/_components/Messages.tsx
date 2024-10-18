@@ -15,9 +15,12 @@ const Messages = ({ initialMessages }: Props) => {
   const { toast } = useToast();
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch(`/api/message/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/message/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         setMessages((test) => test.filter((data) => data._id != id));
         return true;

@@ -16,9 +16,12 @@ const Services = ({ initialServices }: Props) => {
   const { toast } = useToast();
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch(`/api/service/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/service/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         setServices((test) => test.filter((data) => data._id != id));
         return true;

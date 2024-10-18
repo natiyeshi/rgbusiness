@@ -17,7 +17,7 @@ const Partners = ({ initialPartners }: Props) => {
   const handleDelete = async (id: string) => {
     try {
       const res = await fetch(
-        `/api/partner/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/partner/${id}`,
         {
           method: "DELETE",
         }

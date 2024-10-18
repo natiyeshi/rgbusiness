@@ -10,7 +10,7 @@ const PartnersWrapper = async () => {
 
 async function getPartners(): Promise<IPartner[]> {
   try {
-    const res = await fetch(`/api/partner`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/partner`, {
       cache: "no-store",
     });
     if (!res.ok) {

@@ -17,9 +17,12 @@ const Page = async () => {
 
 async function getTestimonials(): Promise<ITestimonial[]> {
   try {
-    const res = await fetch(`/api/testimonial`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/testimonial`,
+      {
+        cache: "no-store",
+      }
+    );
     if (!res.ok) {
       throw new Error("Failed to fetch");
     }
