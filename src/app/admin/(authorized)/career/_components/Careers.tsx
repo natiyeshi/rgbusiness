@@ -16,12 +16,9 @@ const Careers = ({ initialCareers }: Props) => {
   const { toast } = useToast();
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/career/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`/api/career/${id}`, {
+        method: "DELETE",
+      });
       if (res.ok) {
         setCareers((test) => test.filter((data) => data._id != id));
         return true;

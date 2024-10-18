@@ -16,7 +16,7 @@ const Page = async () => {
 
 async function getMessages(): Promise<IMessage[]> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/message`, {
+    const res = await fetch(`/api/message`, {
       cache: "no-store",
     });
     if (!res.ok) {

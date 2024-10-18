@@ -44,19 +44,16 @@ const ChangePassword = ({ setIsChangePassword, isChangePassword }: any) => {
       setLoading(true);
 
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/users/changepassword`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              currentPassword: values.currentPassword,
-              newPassword: values.newPassword,
-            }),
-          }
-        );
+        const response = await fetch(`/api/users/changepassword`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            currentPassword: values.currentPassword,
+            newPassword: values.newPassword,
+          }),
+        });
 
         const result = await response.json();
 

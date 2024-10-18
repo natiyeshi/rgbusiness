@@ -9,19 +9,16 @@ const TestimonialWraper = async () => {
 
 async function getTestimonials(): Promise<ITestimonial[]> {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/testimonial`,
-      {
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`/api/testimonial`, {
+      cache: "no-store",
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch");
     }
     const testimonials: ITestimonial[] = await res.json();
     return testimonials;
   } catch (error) {
-    console.log(error,"Testimonials error")
+    console.log(error, "Testimonials error");
     return [];
   }
 }

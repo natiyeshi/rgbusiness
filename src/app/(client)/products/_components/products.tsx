@@ -52,7 +52,7 @@ const Product = ({ data }: { data: IService }) => {
 
 async function getServices(): Promise<IService[]> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/service`, {
+    const res = await fetch(`/api/service`, {
       cache: "no-store",
     });
     if (!res.ok) {
