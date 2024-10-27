@@ -1,22 +1,5 @@
 "use client";
 import Image from "next/image";
-import part1 from "@/../public/assets/partners/part1.png";
-import part2 from "@/../public/assets/partners/part2.png";
-import part3 from "@/../public/assets/partners/part3.png";
-import part4 from "@/../public/assets/partners/part4.png";
-import part5 from "@/../public/assets/partners/part5.png";
-import part6 from "@/../public/assets/partners/part6.png";
-import part7 from "@/../public/assets/partners/part7.png";
-import part8 from "@/../public/assets/partners/part8.png";
-import part9 from "@/../public/assets/partners/part9.png";
-import part10 from "@/../public/assets/partners/part10.png";
-import part11 from "@/../public/assets/partners/part11.png";
-import part12 from "@/../public/assets/partners/part12.png";
-import part13 from "@/../public/assets/partners/part13.png";
-import part14 from "@/../public/assets/partners/part14.png";
-import part15 from "@/../public/assets/partners/part15.png";
-import part16 from "@/../public/assets/partners/part16.png";
-import part17 from "@/../public/assets/partners/part17.png";
 
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
