@@ -6,16 +6,13 @@ import { useToast } from "@/hooks/use-toast"; // Adjust import based on your fol
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import React from "react";
+import { messageValidation } from "@/validation/message.validation";
 
 const ContactForm = () => {
   const { toast } = useToast();
 
   // Validation schema
-  const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
-    email: Yup.string().email("Invalid email").required("Email is required"),
-    message: Yup.string().required("Message is required"),
-  });
+ 
 
   // Initial values for form fields
   const initialValues = {
@@ -76,7 +73,7 @@ const ContactForm = () => {
       <div className="mb-6">Contact us</div>
       <Formik
         initialValues={initialValues}
-        validationSchema={validationSchema}
+        validationSchema={messageValidation}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (

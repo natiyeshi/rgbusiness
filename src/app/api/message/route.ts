@@ -12,7 +12,7 @@ export async function POST(req: any) {
       { message: "Message created successfully!", newMessage },
       { status: 200 }
     );
-  } catch (err) {
+  } catch (err : any) {
     if (err.name === "ValidationError") {
       return NextResponse.json(
         { message: "Validation Failed", errors: err.errors },

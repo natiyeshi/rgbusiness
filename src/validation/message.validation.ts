@@ -10,7 +10,7 @@ export const messageValidation = Yup.object().shape({
       .email('Must be a valid email'), // Must be a valid email format
     message: Yup.string()
       .required('Message is required') // Message is mandatory
-      .min(5, "Must be at least 5 characters")
+      .min(3, "Must be at least 5 characters")
       .max(2000, "Must be less than 2000 characters"),
 });
   
