@@ -7,9 +7,9 @@ export async function POST(req: any) {
     const body = await req.json();
     const messageData = body.formData;
     await messageValidation.validate(messageData);
-    const newMessage = await Message.create(messageData);
+    await Message.create(messageData);
     return NextResponse.json(
-      { message: "Message created successfully!", newMessage },
+      { message: "Message created successfully!" },
       { status: 200 }
     );
   } catch (err) {
