@@ -40,10 +40,10 @@ const ContactForm = () => {
         }
       );
 
-      if (!response.ok) {
-        console.log(await response.json());
-        throw new Error("Something went wrong. Please try again.");
-      }
+      // if (!response.ok) {
+      //   console.log(await response.json());
+      //   throw new Error("Something went wrong. Please try again.");
+      // }
 
       // Assuming response is okay
       toast({
