@@ -51,12 +51,11 @@ const ContactForm = () => {
       toast({
         title: "Message sent successfully!",
         description: "We will get back to you shortly.",
-        // status: "success",
       });
 
       resetForm(); // Reset form after successful submission
     } catch (error) {
-      console.log(error)
+      console.log(error,"EEEEEEEEEEEEEEEEEE")
       toast({
         title: "Error",
         description: (error as any).message || "Failed to send message.",
