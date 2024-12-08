@@ -45,7 +45,8 @@ const ContactForm = () => {
       );
 
       if (!response.ok) {
-        console.log(response.body,"AA")
+        const errorData = await response.json();
+        console.error("Error response:", errorData);
         throw new Error("Something went wrong. Please try again.");
       }
 
