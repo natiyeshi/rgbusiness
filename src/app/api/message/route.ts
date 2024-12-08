@@ -13,6 +13,7 @@ export async function POST(req: any) {
       { status: 200 }
     );
   } catch (err : any) {
+    console.log(err)
     if (err.name === "ValidationError") {
       return NextResponse.json(
         { message: "Validation Failed", errors: err.errors },
