@@ -33,8 +33,9 @@ const ContactForm = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}api/message`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/message`,
         {
+          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -44,6 +45,7 @@ const ContactForm = () => {
       );
 
       if (!response.ok) {
+        console.log(response.body,"AA")
         throw new Error("Something went wrong. Please try again.");
       }
 
@@ -56,6 +58,7 @@ const ContactForm = () => {
 
       resetForm(); // Reset form after successful submission
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error",
         description: (error as any).message || "Failed to send message.",
