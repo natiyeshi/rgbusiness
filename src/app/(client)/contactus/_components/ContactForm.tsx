@@ -12,7 +12,6 @@ const ContactForm = () => {
   const { toast } = useToast();
 
   // Validation schema
- 
 
   // Initial values for form fields
   const initialValues = {
@@ -42,6 +41,7 @@ const ContactForm = () => {
       );
 
       if (!response.ok) {
+        console.log(await response.json());
         throw new Error("Something went wrong. Please try again.");
       }
 
@@ -53,7 +53,7 @@ const ContactForm = () => {
 
       resetForm(); // Reset form after successful submission
     } catch (error) {
-      console.log(error,"EEEEEEEEEEEEEEEEEE")
+      console.log(error, "EEEEEEEEEEEEEEEEEE");
       toast({
         title: "Error",
         description: (error as any).message || "Failed to send message.",
