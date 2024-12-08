@@ -33,7 +33,7 @@ const ContactForm = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/message`,
+        `${process.env.NEXT_PUBLIC_API_URL}api/message`,
         {
           method: "POST",
           headers: {
