@@ -32,7 +32,7 @@ const ContactForm = () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/message`,
         {
-          // mode: "no-cors",
+          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
