@@ -12,18 +12,20 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: {
     default:
-      "RG Business Group - Solar Solutions, Electromechanical Works, and Industrial Equipment in Ethiopia",
+      "RG Business Group - Water pumps in ethiopia, solar PV systems in ethiopia, and generators in Ethiopia",
     template: "%s - RG Business Group",
   },
   description:
     "RG Business Group provides solar solutions, electromechanical works, industrial chemical trading, water pumps, agricultural machinery, and consulting services. Based in Addis Ababa, Ethiopia, RG Business Group has been serving major factories and businesses since 2018.",
   keywords: [
-    "Solar Solutions",
-    "Solar mini-grid installation",
-    "Solar water pumping systems",
-    "Generators and Compressors",
-    "Boilers",
-    "Water Pumps",
+    "Water pumps in ethiopia",
+    "solar PV systems in ethiopia",
+    "generators in ethiopia",
+    "Electrical materials in ethiopia",
+    "Construction chemicals and Electrical  Equipment  Suppliers",
+    "Construction materials and chemicals in ethiopia",
+    "Mechanical and workshop equipment and tools in ethiopia",
+    "Garment and apparel in ethiopia",
     "Agricultural Machinery",
     "Industrial Efficiency",
     "Irrigation Systems",
